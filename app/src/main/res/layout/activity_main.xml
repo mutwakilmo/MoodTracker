@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity"
     android:id="@+id/parent_relative_layout"
-    android:background="@color/colorHappy">
+    android:background="@color/colorHappy"
+    >
 
     <ImageView
         android:layout_width="wrap_content"
@@ -38,4 +39,18 @@
         android:background="@null"
         android:contentDescription="@string/mood_history_button"
         android:src="@drawable/ic_history_black" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="43dp"
+        android:layout_height="39dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@null"
+        android:src="@drawable/ic_mobile_screen_share" />
 </RelativeLayout>

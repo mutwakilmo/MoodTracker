@@ -1,6 +1,7 @@
 package com.mutwakilmo.android.moodtracker.ui;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     private ImageView moodImageView;
     private ImageButton moodHistoryButton;
     private ImageButton addCommentButton;
+    private ImageButton shareAppButton;
     private GestureDetectorCompat mDetector;
     private RelativeLayout parentRelativeLayout;
 
@@ -42,13 +44,14 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         parentRelativeLayout = findViewById(R.id.parent_relative_layout);
         addCommentButton = findViewById(R.id.btn_add_comment);
         moodHistoryButton = findViewById(R.id.btn_mood_history);
+        shareAppButton = findViewById(R.id.imageButton);
 
         mDetector = new GestureDetectorCompat(this,this);
 
         changeUiForMood(currentMoodIndex);
 
 
-        /*******************************Add comment to the Mood********************************/
+        //*****************************Add comment to the Mood********************************/
 
         addCommentButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +88,18 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
 
 
+            }
+        });
+
+        //Share your mood Button
+        shareAppButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Hello! I would like to share with you my mood of the day from MoodTracker App and Today my Mood is... ");
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.send_To)));
             }
         });
 
@@ -144,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         return true;
     }
 
-    /************************* change mood methods***************************************/
+    //************************* change mood methods***************************************/
     private void changeUiForMood(int currentMoodIndex) {
         moodImageView.setImageResource(Constants.moodImagesArray[currentMoodIndex]);
         parentRelativeLayout.setBackgroundResource(Constants.moodColorsArray[currentMoodIndex]);
