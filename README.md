@@ -11,7 +11,7 @@ Your mood history is saved for a week, allowing you see your general mood trends
 
 ## Screenshots
 
-<img src="./art/Screen1.png" width="25%"> &ensp;<img src="./art/Screen2.png" width="25%"> &ensp;<img src="./art/Screen2.png" width="25%"> &ensp;<img src="./art/Screen2.png" width="25%">&ensp;<img src="./art/Screen5.png" width="25%">&ensp;<img src="./art/Screen6.png" width="25%">
+<img src="./art/Screen1.png" width="25%"> &ensp;<img src="./art/Screen2.png" width="25%"> &ensp;<img src="./art/Screen2.png" width="25%"> &ensp;<img src="./art/Screen2.png" width="25%">&ensp;<img src="./art/Screen5.png" width="25%">&ensp;<img src="./art/Screen6.png" width="25%"><img src="./art/Screen5.png" width="25%">&ensp;<img src="./art/Screenshot.jpeg" width="25%">
 
 ## Libraries Used
 
