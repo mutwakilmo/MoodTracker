@@ -1,5 +1,6 @@
 # MoodTracker App
-MoodTracker OpenClassroom's Project
+
+**OpenClassrooms Project 6: Android MoodTracker App**
 
  The idea is simple: every day, you record your mood within the application. if you want, you can add a note to give more information on  _why_  you're feeling a certain way (ex. "I got a new job! 😃" or "There was no cheesecake left for dessert 😞 ").
 
