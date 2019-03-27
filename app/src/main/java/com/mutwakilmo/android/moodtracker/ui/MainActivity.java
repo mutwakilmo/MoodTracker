@@ -1,18 +1,23 @@
 package com.mutwakilmo.android.moodtracker.ui;
 
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.view.GestureDetectorCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
-import com.mutwakilmo.android.moodtracker.util.Constants;
 import com.mutwakilmo.android.moodtracker.R;
+import com.mutwakilmo.android.moodtracker.util.Constants;
 
 public class MainActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
@@ -41,6 +46,50 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         mDetector = new GestureDetectorCompat(this,this);
 
         changeUiForMood(currentMoodIndex);
+
+
+        /*******************************Add comment to the Mood********************************/
+
+        addCommentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+
+                final EditText editText = new EditText(MainActivity.this);
+                editText.setHint("Comment");
+
+
+                builder.setMessage("Comment").setView(editText)
+                        .setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (!editText.getText().toString().isEmpty()) {
+
+                                }
+
+
+
+                                dialog.dismiss();
+
+                                Toast.makeText(MainActivity.this, "Comment Saved", Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
+                builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+
+                        Toast.makeText(MainActivity.this, "Comment Canceled", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                        .create().show();
+
+
+
+            }
+        });
 
     }
 
@@ -98,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         return true;
     }
 
-    // change mood methods
+    /************************* change mood methods***************************************/
     private void changeUiForMood(int currentMoodIndex) {
         moodImageView.setImageResource(Constants.moodImagesArray[currentMoodIndex]);
         parentRelativeLayout.setBackgroundResource(Constants.moodColorsArray[currentMoodIndex]);
