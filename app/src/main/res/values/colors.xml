@@ -4,6 +4,14 @@
     <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorAccent">#ffffff</color>
 
+
+    <!--mood color-->
+    <color name="colorSuperHappy">#F8EC50</color>
+    <color name="colorHappy">#B8E986</color>
+    <color name="colorNormal">#468AD9</color>
+    <color name="colorDisappointed">#9B9B9B</color>
+    <color name="colorSad">#DE3C50</color>
+
     <!-- colors for button style -->
 
     <color name="gradient_start_color">#4c84ff</color>

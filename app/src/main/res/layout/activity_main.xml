@@ -1,18 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/parent_relative_layout"
+    android:background="@color/colorHappy">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/my_mood"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/mood_of_the_user"
+        android:src="@drawable/smiley_happy" />
 
-</android.support.constraint.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/btn_add_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:background="@null"
+        android:contentDescription="@string/add_comment_button"
+        android:src="@drawable/ic_note_add_black" />
+
+    <ImageButton
+        android:id="@+id/btn_mood_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:background="@null"
+        android:contentDescription="@string/mood_history_button"
+        android:src="@drawable/ic_history_black" />
+</RelativeLayout>
