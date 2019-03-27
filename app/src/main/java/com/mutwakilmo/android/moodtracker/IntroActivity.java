@@ -72,8 +72,10 @@ public class IntroActivity extends AppCompatActivity {
         final List<ScreenItem> mList = new ArrayList<>();
         mList.add(new ScreenItem("Mood Tracker App","The idea is simple: every day, you record your mood within the application. ",R.drawable.web_hi_res_512));
         mList.add(new ScreenItem("Choose Your Mood","The mood is set for an entire day, but at any point during a day, you can reopen the app to change your mood. At midnight, the mood at that point in time will be saved as the mood of the day, and you can start setting the mood of the new day!",R.drawable.img1));
-        mList.add(new ScreenItem("Add Note to Your Mood","In the bottom left of the screen, a button will let you add a custom note to the mood. When you press it, a popup will be displayed with a text zone and a keyboard so you can enter your note. ",R.drawable.img2));
+        mList.add(new ScreenItem("Add Note to Your Mood","In the bottom left of the screen, a button will let you add a custom note to the mood. When you press it, a popup will be displayed with a text zone and a keyboard so you can enter your note. ",R.drawable.img4));
+        mList.add(new ScreenItem("Share Your Mood","Sharing your daily mood with a friend (ex. via SMS or email)",R.drawable.screenshot_3));
         mList.add(new ScreenItem("View Your Mood History","On the mood history screen, the most recent 7 moods will be shown as horizontal bars arranged vertically from oldest to newest. An icon should indicate if a mood has an associated note. If a mood has a note and you click the icon, the note should be shown briefly at the bottom of the screen as a Toast.",R.drawable.img3));
+
         // setup viewpager
         screenPager =findViewById(R.id.screen_viewpager);
         introViewPagerAdapter = new IntroViewPagerAdapter(this,mList);
