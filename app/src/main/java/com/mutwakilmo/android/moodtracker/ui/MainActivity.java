@@ -54,13 +54,10 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-
-
                 final EditText editText = new EditText(MainActivity.this);
-                editText.setHint("Comment");
 
 
-                builder.setMessage("Comment").setView(editText)
+                builder.setMessage("Comment\uD83E\uDD14 \uD83D\uDCDD").setView(editText)
                         .setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
