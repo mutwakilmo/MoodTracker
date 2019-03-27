@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.moodtracker;
+package com.mutwakilmo.android.moodtracker.ui;
 
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
@@ -10,6 +10,9 @@ import android.view.MotionEvent;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import com.mutwakilmo.android.moodtracker.util.Constants;
+import com.mutwakilmo.android.moodtracker.R;
 
 public class MainActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
 

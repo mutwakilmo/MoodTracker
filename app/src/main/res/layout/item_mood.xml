@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/left_frame_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="20"
+        android:orientation="horizontal"
+        android:padding="32dp"
+        tools:background="@color/colorSuperHappy">
+
+        <TextView
+            android:id="@+id/tv_days"
+            android:layout_gravity="start|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Today"
+            android:textStyle="bold"/>
+
+        <ImageButton
+            android:id="@+id/btn_show_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:background="@null"
+            android:contentDescription="@string/show_comment_button"
+            android:src="@drawable/ic_comment_black_48px" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/right_frame_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="20"
+        android:background="#FFFFFF" />
+</LinearLayout>
