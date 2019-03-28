@@ -91,6 +91,16 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
             }
         });
 
+
+        // History Button to view Mood history screen
+        moodHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MoodHistoryActivity.class);
+                startActivity(intent);
+            }
+        });
+
         //Share your mood Button
         shareAppButton.setOnClickListener(new View.OnClickListener() {
             @Override
