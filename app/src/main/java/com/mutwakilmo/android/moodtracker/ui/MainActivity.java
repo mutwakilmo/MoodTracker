@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.mutwakilmo.android.moodtracker.R;
+import com.mutwakilmo.android.moodtracker.data.SharedPreferencesHelper;
 import com.mutwakilmo.android.moodtracker.util.Constants;
 
 public class MainActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
@@ -47,6 +49,12 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         shareAppButton = findViewById(R.id.imageButton);
 
         mDetector = new GestureDetectorCompat(this,this);
+        mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        currentDay = mPreferences.getInt(SharedPreferencesHelper.KEY_CURRENT_DAY, 1);
+        currentMoodIndex = mPreferences.getInt(SharedPreferencesHelper.KEY_CURRENT_MOOD, 3);
+        currentComment = mPreferences.getString(SharedPreferencesHelper.KEY_CURRENT_COMMENT, "");
+
 
         changeUiForMood(currentMoodIndex);
 
@@ -65,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 if (!editText.getText().toString().isEmpty()) {
-
+                                    SharedPreferencesHelper.saveComment(editText.getText().toString(), currentDay, mPreferences);
                                 }
 
 
@@ -153,6 +161,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
                 currentMoodIndex++;
                 changeUiForMood(currentMoodIndex);
                 //ToDo SharedPreferences
+                SharedPreferencesHelper.saveMood(currentMoodIndex, currentDay, mPreferences);
 
             }
 
@@ -164,6 +173,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
                 currentMoodIndex--;
                 changeUiForMood(currentMoodIndex);
                 //ToDo SharedPreferences
+                SharedPreferencesHelper.saveMood(currentMoodIndex, currentDay, mPreferences);
             }
         }
         return true;
