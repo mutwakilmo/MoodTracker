@@ -11,7 +11,7 @@ Your mood history is saved for a week, allowing you see your general mood trends
 
 ## Screenshots
 
-<img src="./art/image0.png" width="25%"> &ensp;<img src="./art/image1.png" width="25%"> &ensp;<img src="./art/image2.png" width="25%">&ensp;<img src="./art/image3.png" width="25%">
+<img src="./art/image0.png" width="25%"> &ensp;<img src="./art/image1.png" width="25%"> &ensp;<img src="./art/image3.png" width="25%">
 &ensp;<img src="./art/image4.png" width="25%">&ensp;<img src="./art/image5.png" width="25%">
 
 ## Libraries Used
