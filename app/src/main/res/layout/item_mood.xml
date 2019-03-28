@@ -6,6 +6,7 @@
     android:layout_height="100dp"
     android:orientation="horizontal">
 
+
     <FrameLayout
         android:id="@+id/left_frame_layout"
         android:layout_width="0dp"
