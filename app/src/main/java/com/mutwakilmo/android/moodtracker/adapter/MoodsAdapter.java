@@ -26,6 +26,7 @@ public class MoodsAdapter extends RecyclerView.Adapter<MoodsAdapter.MoodViewHold
     private ArrayList<Integer> mMoods;
     private ArrayList<String> mComments;
 
+    //*** Constructor*
     public MoodsAdapter(Context context, int currentDay, ArrayList<Integer> moods, ArrayList<String> comments) {
         this.mContext = context;
         this.mCurrentDay = currentDay;
@@ -83,6 +84,7 @@ public class MoodsAdapter extends RecyclerView.Adapter<MoodsAdapter.MoodViewHold
         moodViewHolder.rightFrameLayout.setLayoutParams(rightLayoutParams);
         moodViewHolder.leftFrameLayout.setBackgroundResource(Constants.moodColorsArray[mood]);
 
+        //** if there's a comment, show the icon and a toast on click*
         final String comment = mComments.get(i);
         if (comment != null && !comment.isEmpty()) {
             moodViewHolder.commentButton.setVisibility(View.VISIBLE);

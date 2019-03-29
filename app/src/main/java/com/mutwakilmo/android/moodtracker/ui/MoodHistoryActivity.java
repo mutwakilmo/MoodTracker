@@ -31,7 +31,7 @@ public class MoodHistoryActivity extends AppCompatActivity {
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         currentDay = mPreferences.getInt(SharedPreferencesHelper.KEY_CURRENT_DAY, 1);
 
-        moodsRecyclerView = findViewById(R.id.rv_moods);
+        moodsRecyclerView = findViewById(R.id.reycler_moods);
         moodsRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true));
 
         for (int i = 0; i < currentDay; i++) {

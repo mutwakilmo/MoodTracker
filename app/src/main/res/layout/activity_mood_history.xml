@@ -6,7 +6,7 @@
     tools:context=".ui.MoodHistoryActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_moods"
+        android:id="@+id/reycler_moods"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listItem="@layout/item_mood" />

@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     private int currentMoodIndex = 3;
     private String currentComment;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         });
 
 
-        // History Button to view Mood history screen
+        //* History Button to view Mood history screen*/
         moodHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,13 +117,13 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
             }
         });
 
-        //Share your mood Button
+        //*Share your mood Button*/
         shareAppButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "Hello! I would like to share with you my mood of the day from MoodTracker App and Today my Mood is... ");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Hello! I would like to share with you my mood of the day from MoodTracker App.Today my Mood is... ");
                 sendIntent.setType("text/plain");
                 startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.send_To)));
             }
@@ -195,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
 
 
-    //****************************alarm  *********************************************//
+    //* Scheduling alarm to save mood everyday
     private void scheduleAlarm() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 23);
