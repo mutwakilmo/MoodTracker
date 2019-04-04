@@ -21,6 +21,8 @@ import java.util.ArrayList;
  * Created by Mutwakil Mo on ${Date}
  */
 public class MoodsAdapter extends RecyclerView.Adapter<MoodsAdapter.MoodViewHolder> {
+
+    private static final String TAG = "MoodsAdapter";
     private Context mContext;
     private int mCurrentDay;
     private ArrayList<Integer> mMoods;

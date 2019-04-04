@@ -22,6 +22,8 @@ import java.util.List;
 
 public class IntroActivity extends AppCompatActivity {
 
+    private static final String TAG = "IntroActivity";
+
     private ViewPager screenPager;
     IntroViewPagerAdapter introViewPagerAdapter ;
     TabLayout tabIndicator;
@@ -104,7 +106,7 @@ public class IntroActivity extends AppCompatActivity {
 
                     // TODO : show the GETSTARTED Button and hide the indicator and the next button
 
-                    loaddLastScreen();
+                    loadLastScreen();
 
 
                 }
@@ -114,7 +116,7 @@ public class IntroActivity extends AppCompatActivity {
             }
         });
 
-        // tablayout add change listener
+        // tab layout add change listener
 
 
         tabIndicator.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
@@ -123,7 +125,7 @@ public class IntroActivity extends AppCompatActivity {
 
                 if (tab.getPosition() == mList.size()-1) {
 
-                    loaddLastScreen();
+                    loadLastScreen();
 
                 }
 
@@ -193,14 +195,14 @@ public class IntroActivity extends AppCompatActivity {
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("myPrefs",MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-        editor.putBoolean("isIntroOpnend",true);
+        editor.putBoolean("isIntroOpen",true);
         editor.commit();
 
 
     }
 
     // show the GET STARTED Button and hide the indicator and the next button
-    private void loaddLastScreen() {
+    private void loadLastScreen() {
 
         btnNext.setVisibility(View.INVISIBLE);
         btnGetStarted.setVisibility(View.VISIBLE);

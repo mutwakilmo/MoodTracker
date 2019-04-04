@@ -15,6 +15,8 @@ import java.util.ArrayList;
 
 public class MoodHistoryActivity extends AppCompatActivity {
 
+    private static final String TAG = "MoodHistoryActivity";
+
     private RecyclerView moodsRecyclerView;
 
     private MoodsAdapter moodsAdapter;

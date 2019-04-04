@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
  * Created by Mutwakil Mo on ${Date}
  */
 public class SharedPreferencesHelper {
+    private static final String TAG = "SharedPreferencesHelper";
 
     public static final String KEY_CURRENT_DAY = "KEY_CURRENT_DAY";
 
@@ -34,29 +35,29 @@ public class SharedPreferencesHelper {
 
     //Save Mood Method
 
-    public static void saveMood(int currentMoodIndex, int currentDay, SharedPreferences preferences) {
-        preferences.edit().putInt(KEY_CURRENT_MOOD, currentMoodIndex).apply();
+    public static void saveMood(int moodIndex, int currentDay, SharedPreferences preferences) {
+        preferences.edit().putInt(KEY_CURRENT_MOOD, moodIndex).apply();
         switch (currentDay) {
             case 1:
-                preferences.edit().putInt(KEY_MOOD0, currentMoodIndex).apply();
+                preferences.edit().putInt(KEY_MOOD0, moodIndex).apply();
                 break;
             case 2:
-                preferences.edit().putInt(KEY_MOOD1, currentMoodIndex).apply();
+                preferences.edit().putInt(KEY_MOOD1, moodIndex).apply();
                 break;
             case 3:
-                preferences.edit().putInt(KEY_MOOD2, currentMoodIndex).apply();
+                preferences.edit().putInt(KEY_MOOD2, moodIndex).apply();
                 break;
             case 4:
-                preferences.edit().putInt(KEY_MOOD3, currentMoodIndex).apply();
+                preferences.edit().putInt(KEY_MOOD3, moodIndex).apply();
                 break;
             case 5:
-                preferences.edit().putInt(KEY_MOOD4, currentMoodIndex).apply();
+                preferences.edit().putInt(KEY_MOOD4, moodIndex).apply();
                 break;
             case 6:
-                preferences.edit().putInt(KEY_MOOD5, currentMoodIndex).apply();
+                preferences.edit().putInt(KEY_MOOD5, moodIndex).apply();
                 break;
             case 7:
-                preferences.edit().putInt(KEY_MOOD6, currentMoodIndex).apply();
+                preferences.edit().putInt(KEY_MOOD6, moodIndex).apply();
                 break;
             default:
                 preferences.edit().putInt(KEY_MOOD0, preferences.getInt(KEY_MOOD1, 3)).apply();
@@ -65,7 +66,7 @@ public class SharedPreferencesHelper {
                 preferences.edit().putInt(KEY_MOOD3, preferences.getInt(KEY_MOOD4, 3)).apply();
                 preferences.edit().putInt(KEY_MOOD4, preferences.getInt(KEY_MOOD5, 3)).apply();
                 preferences.edit().putInt(KEY_MOOD5, preferences.getInt(KEY_MOOD6, 3)).apply();
-                preferences.edit().putInt(KEY_MOOD6, currentMoodIndex).apply();
+                preferences.edit().putInt(KEY_MOOD6, moodIndex).apply();
         }
     }
 

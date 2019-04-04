@@ -30,6 +30,8 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
+    private static final String TAG = "MainActivity";
+
     private ImageView moodImageView;
     private ImageButton moodHistoryButton;
     private ImageButton addCommentButton;
@@ -168,7 +170,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
             if (currentMoodIndex < 4){
                 currentMoodIndex++;
                 changeUiForMood(currentMoodIndex);
-                //ToDo SharedPreferences
                 SharedPreferencesHelper.saveMood(currentMoodIndex, currentDay, mPreferences);
 
             }
@@ -180,7 +181,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
             if (currentMoodIndex > 0){
                 currentMoodIndex--;
                 changeUiForMood(currentMoodIndex);
-                //ToDo SharedPreferences
                 SharedPreferencesHelper.saveMood(currentMoodIndex, currentDay, mPreferences);
             }
         }
