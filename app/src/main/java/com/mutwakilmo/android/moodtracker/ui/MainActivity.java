@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mutwakilmo.android.moodtracker.R;
 import com.mutwakilmo.android.moodtracker.data.SharedPreferencesHelper;
 import com.mutwakilmo.android.moodtracker.receiver.UpdateDayReceiver;
@@ -44,6 +45,10 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     private int currentMoodIndex = 3;
     private String currentComment;
 
+    // [START declare_analytics]
+    private FirebaseAnalytics mFirebaseAnalytics;
+
+
 
 
     @Override
@@ -64,6 +69,9 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         currentDay = mPreferences.getInt(SharedPreferencesHelper.KEY_CURRENT_DAY, 1);
         currentMoodIndex = mPreferences.getInt(SharedPreferencesHelper.KEY_CURRENT_MOOD, 3);
         currentComment = mPreferences.getString(SharedPreferencesHelper.KEY_CURRENT_COMMENT, "");
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
 
 
         changeUiForMood(currentMoodIndex);
