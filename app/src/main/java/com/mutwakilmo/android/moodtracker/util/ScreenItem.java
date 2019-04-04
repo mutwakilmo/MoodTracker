@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.moodtracker;
+package com.mutwakilmo.android.moodtracker.util;
 
 /**
  * Created by Mutwakil Mo on ${Date}

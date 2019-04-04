@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.moodtracker;
+package com.mutwakilmo.android.moodtracker.ui;
 
 
 import android.content.Intent;
@@ -15,7 +15,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.mutwakilmo.android.moodtracker.ui.MainActivity;
+import com.mutwakilmo.android.moodtracker.adapter.IntroViewPagerAdapter;
+import com.mutwakilmo.android.moodtracker.R;
+import com.mutwakilmo.android.moodtracker.util.ScreenItem;
 
 import java.util.ArrayList;
 import java.util.List;

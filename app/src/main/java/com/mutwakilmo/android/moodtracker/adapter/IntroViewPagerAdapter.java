@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.moodtracker;
+package com.mutwakilmo.android.moodtracker.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.mutwakilmo.android.moodtracker.R;
+import com.mutwakilmo.android.moodtracker.util.ScreenItem;
 
 import java.util.List;
 
