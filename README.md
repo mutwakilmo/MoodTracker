@@ -6,6 +6,8 @@
 
 Your mood history is saved for a week, allowing you see your general mood trends. Any comment you've left can also be consulted.
 
+<a href='https://play.google.com/store/apps/details?id=com.mutwakilmo.android.moodtracker'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="30%" height="30%"/></a>
+
 **MoodTracker website**
 [MoodTracker website for more information](https://moodtrackersite.netlify.com/)
 
