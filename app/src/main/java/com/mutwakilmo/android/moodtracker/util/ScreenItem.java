@@ -6,7 +6,7 @@ package com.mutwakilmo.android.moodtracker.util;
 
 public class ScreenItem {
 
-    String Title,Description;
+    String Title, Description;
     int ScreenImg;
 
     public ScreenItem(String title, String description, int screenImg) {

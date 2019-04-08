@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.mutwakilmo.android.moodtracker.R;
 import com.mutwakilmo.android.moodtracker.adapter.MoodsAdapter;
@@ -29,6 +30,7 @@ public class MoodHistoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mood_history);
+        Log.d(TAG, "onCreate: MoodHistoryActivity");
 
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         currentDay = mPreferences.getInt(SharedPreferencesHelper.KEY_CURRENT_DAY, 1);

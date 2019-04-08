@@ -12,6 +12,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -42,19 +43,18 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
     private SharedPreferences mPreferences;
     private int currentDay;
-    private int currentMoodIndex ;
+    private int currentMoodIndex;
     private String currentComment;
 
     // [START declare_analytics]
     private FirebaseAnalytics mFirebaseAnalytics;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d(TAG, "onCreate: MainActivity");
 
 
         moodImageView = findViewById(R.id.my_mood);
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         moodHistoryButton = findViewById(R.id.btn_mood_history);
         shareAppButton = findViewById(R.id.imageButton);
 
-        mDetector = new GestureDetectorCompat(this,this);
+        mDetector = new GestureDetectorCompat(this, this);
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         currentDay = mPreferences.getInt(SharedPreferencesHelper.KEY_CURRENT_DAY, 1);
@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         currentComment = mPreferences.getString(SharedPreferencesHelper.KEY_CURRENT_COMMENT, "");
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-
 
 
         changeUiForMood(currentMoodIndex);
@@ -96,7 +95,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
                                 }
 
 
-
                                 dialog.dismiss();
 
                                 Toast.makeText(MainActivity.this, "Comment Saved", Toast.LENGTH_SHORT).show();
@@ -112,7 +110,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
                     }
                 })
                         .create().show();
-
 
 
             }
@@ -175,8 +172,8 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         // Swiping up
-        if (e1.getY() - e2.getY() > 50){
-            if (currentMoodIndex < 4){
+        if (e1.getY() - e2.getY() > 50) {
+            if (currentMoodIndex < 4) {
                 currentMoodIndex++;
                 changeUiForMood(currentMoodIndex);
                 SharedPreferencesHelper.saveMood(currentMoodIndex, currentDay, mPreferences);
@@ -186,8 +183,8 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         }
 
         // Swiping down
-        else if (e1.getY() - e2.getY() < 50){
-            if (currentMoodIndex > 0){
+        else if (e1.getY() - e2.getY() < 50) {
+            if (currentMoodIndex > 0) {
                 currentMoodIndex--;
                 changeUiForMood(currentMoodIndex);
                 SharedPreferencesHelper.saveMood(currentMoodIndex, currentDay, mPreferences);
@@ -203,7 +200,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         MediaPlayer mediaPlayer = MediaPlayer.create(this, Constants.moodSoundsArray[currentMoodIndex]);
         mediaPlayer.start();
     }
-
 
 
     //* Scheduling alarm to save mood everyday
@@ -225,7 +221,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
             );
         }
     }
-
 
 
     @Override
