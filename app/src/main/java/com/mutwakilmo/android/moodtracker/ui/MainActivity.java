@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
     private SharedPreferences mPreferences;
     private int currentDay;
-    private int currentMoodIndex = 3;
+    private int currentMoodIndex ;
     private String currentComment;
 
     // [START declare_analytics]
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
 
         changeUiForMood(currentMoodIndex);
+        scheduleAlarm();
 
 
         //*****************************Add comment to the Mood********************************/
