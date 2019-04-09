@@ -23,4 +23,5 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.mutwakilmo.android.moodtracker", appContext.getPackageName());
     }
+
 }
