@@ -16,6 +16,26 @@ Your mood history is saved for a week, allowing you see your general mood trends
 <img src="./art/image0.png" width="25%"> &ensp;<img src="./art/image1.png" width="25%"> &ensp;<img src="./art/image3.png" width="25%">
 &ensp;<img src="./art/image4.png" width="25%">&ensp;<img src="./art/image5.png" width="25%">
 
+## Skills and learnig goals
+
+-   Respect Industry Standard development practices
+    
+-   Select the appropriate programming languages for the development of the application
+    
+-   Develop an application offering the features expected by the client
+    
+-   Launch an application on the emulator or on real equipment
+    
+-   Master the life cycle of an application and its components
+    
+-   Use the Android Studio environment
+    
+-   Write a Java unit test
+    
+-   Debug Android code
+    
+-   Install and use an external library
+
 ## Libraries Used
 
 * [Android Support Library](https://developer.android.com/topic/libraries/support-library/)
