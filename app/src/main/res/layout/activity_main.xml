@@ -41,7 +41,7 @@
         android:src="@drawable/ic_history_black" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/shareButton"
         android:layout_width="43dp"
         android:layout_height="39dp"
         android:layout_alignParentEnd="true"

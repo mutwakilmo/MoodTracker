@@ -33,6 +33,8 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
     private static final String TAG = "MainActivity";
+    // Class name for Log tag
+    private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     private ImageView moodImageView;
     private ImageButton moodHistoryButton;
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         parentRelativeLayout = findViewById(R.id.parent_relative_layout);
         addCommentButton = findViewById(R.id.btn_add_comment);
         moodHistoryButton = findViewById(R.id.btn_mood_history);
-        shareAppButton = findViewById(R.id.imageButton);
+        shareAppButton = findViewById(R.id.shareButton);
 
         mDetector = new GestureDetectorCompat(this, this);
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -82,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         addCommentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d(LOG_TAG, "Button clicked!");
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 final EditText editText = new EditText(MainActivity.this);
 
@@ -120,6 +123,8 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         moodHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(LOG_TAG, "Button clicked!");
+
                 Intent intent = new Intent(MainActivity.this, MoodHistoryActivity.class);
                 startActivity(intent);
             }
@@ -129,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         shareAppButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(LOG_TAG, "Button clicked!");
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "Hello! I would like to share with you my mood of the day from MoodTracker App.Today my Mood is... ");
