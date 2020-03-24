@@ -12,7 +12,7 @@ Your mood history is saved for a week, allowing you see your general mood trends
 [MoodTracker website for more information](https://moodtrackersite.netlify.com/)
 
 
-**MoodTracker Vimeo **
+**MoodTracker Vimeo video📽️**
 
  <a href='https://vimeo.com/371357363'><img alt='MyNews vedio' src='https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-vimeo-512.png' width="10%" height="10%"/></a>
 
