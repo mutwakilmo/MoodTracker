@@ -1,4 +1,4 @@
-# MoodTracker App
+# MoodTracker Android App
 
 **OpenClassrooms Project 6: Android MoodTracker App**
 
